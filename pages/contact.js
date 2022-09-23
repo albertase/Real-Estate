@@ -5,7 +5,9 @@ import {
   Stack,
   Textarea,
   Button,
+  Select,
   Box,
+  Option
 } from "@chakra-ui/react";
 import Link from 'next/link'
 import React from "react";
@@ -48,6 +50,17 @@ function Contact() {
           <ValidationError
             prefix="Address"
             field="text"
+            errors={state.errors}
+          />
+        </InputGroup>
+        <InputGroup>
+          <Select name="purpose" h="12" placeholder="What is your purpose?">
+            <option>Buy</option>
+            <option>Rent</option>
+          </Select>
+          <ValidationError
+            prefix="Purpose"
+            field="select"
             errors={state.errors}
           />
         </InputGroup>
